@@ -30,17 +30,25 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
+  dartz: ^0.10.1
   equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
   image_picker: ^1.1.0
   intl: ^0.19.0
+  rxdart: ^0.27.7
 
 dev_dependencies:
+  bloc_test: ^9.1.7
+  build_runner: ^2.4.10
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  integration_test:
+    sdk: flutter
+  mockito: ^5.4.4
+  mocktail: ^1.0.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

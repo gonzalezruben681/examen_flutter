@@ -6,8 +6,10 @@ class EmployeeRepositoryImpl implements EmployeeRepository {
   final EmployeeDatasource dataSource;
 
   EmployeeRepositoryImpl({required this.dataSource});
+
   @override
-  Future<List<EmployeeEntity>> getEmployees(String name) {
-    return dataSource.getEmployees(name);
+  Future<List<EmployeeEntity>> getEmployees(String name) async {
+    final employeeModels = await dataSource.getEmployees(name);
+    return employeeModels.map((model) => model.toEntity()).toList();
   }
 }

@@ -12,4 +12,11 @@ class EmployeeModel extends EmployeeEntity {
       name: json['name'],
       lastName: json['last_name'],
       birthday: json['birthday']);
+
+  EmployeeEntity toEntity() => EmployeeEntity(
+        id: id,
+        name: name,
+        lastName: lastName,
+        birthday: birthday,
+      );
 }

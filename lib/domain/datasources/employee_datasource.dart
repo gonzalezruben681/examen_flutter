@@ -1,5 +1,5 @@
-import 'package:examen_flutter/domain/entities/employee_entity.dart';
+import 'package:examen_flutter/data/models/employee_model.dart';
 
 abstract class EmployeeDatasource {
-  Future<List<EmployeeEntity>> getEmployees(String name);
+  Future<List<EmployeeModel>> getEmployees(String name);
 }

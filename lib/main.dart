@@ -1,8 +1,9 @@
+import 'package:examen_flutter/domain/usecases/employee_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:examen_flutter/presentation/cubits/home_cubit.dart';
 import 'package:examen_flutter/presentation/views/home_page.dart';
-import 'package:examen_flutter/data/datasource/employee_datasource.dart';
+import 'package:examen_flutter/data/data_source/employee_datasource_impl.dart';
 import 'package:examen_flutter/data/repositories/employee_repository_impl.dart';
 import 'package:examen_flutter/presentation/blocs/employee/employee_bloc.dart';
 
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => EmployeeBloc(
-              repository:
-                  EmployeeRepositoryImpl(dataSource: EmployeeDatasourceImpl()),
+              employeeUsecase: EmployeeUsecase(
+                  employeeRepository: EmployeeRepositoryImpl(
+                      dataSource: EmployeeDatasourceImpl())),
             ),
           ),
           BlocProvider(
