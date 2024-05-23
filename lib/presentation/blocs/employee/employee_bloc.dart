@@ -13,6 +13,7 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
   }
   Future<void> _getEmployees(
       GetEmployees event, Emitter<EmployeeState> emit) async {
+    emit(EmployeeLoading());
     try {
       final List<EmployeeEntity> employees =
           await employeeUsecase.getEmployees(event.name);
